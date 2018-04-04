@@ -5,11 +5,12 @@ for file in sys.stdin:
     if file.strip() == '0':
         break
 
-    N = sum(map(int, file.strip()))
+    N = int(file.strip())
+    N_summed = sum(map(int, str(N)))
 
-    for i in range(10, 100000):
+    for i in range(11, 100000):
         multiplied = sum(map(int, str(N * i)))
 
-        if N == multiplied:
+        if N_summed == multiplied:
             print(i)
             break
