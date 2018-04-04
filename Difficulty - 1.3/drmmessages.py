@@ -3,12 +3,14 @@ string = input().strip()
 firstHalf = string[:int(len(string) / 2)]
 secondHalf = string[int(len(string) / 2):]
 
-for l in firstHalf:
-    print(ord(l))
-    print(l)
+firstValue = sum([ord(letter) - 65 for letter in firstHalf])
+secondValue = sum([ord(letter) - 65 for letter in secondHalf])
 
-firstValue = sum([ord(letter) for letter in firstHalf])
-secondValue = sum([ord(letter) for letter in secondHalf])
+ordFirst = [ord(letter) - 65 for letter in firstHalf]
+ordSecond = [ord(letter) - 65 for letter in secondHalf]
 
-print(firstValue)
-print(secondValue)
+rotatedFirst = []
+rotatedSecond = []
+
+for num in ordFirst:
+    
