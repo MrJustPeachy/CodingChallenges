@@ -10,7 +10,7 @@ while test_cases > 0:
     theta = math.radians(data[1])
     distanceFromWall = data[2]
     bottomHeight = data[3] + 1
-    topHeight = data[4] + 1
+    topHeight = data[4] - 1
 
     xPos = velocity * math.cos(theta)
 
