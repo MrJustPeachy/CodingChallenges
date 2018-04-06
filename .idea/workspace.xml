@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c226ef9a-054a-49bd-ab12-a1d1d637abfb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Difficulty - 1.5/aaah.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Difficulty - 1.6/anewalphabet.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Difficulty - 1.6/simonsays.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Difficulty - 1.7/leftbeehind.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/To Be Completed/volim.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/To Be Completed/yinandyangstones.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/To Be Completed/compoundwords.py" afterPath="$PROJECT_DIR$/Difficulty - 1.5/compoundwords.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/To Be Completed/sumkindofproblem.py" afterPath="$PROJECT_DIR$/Difficulty - 1.5/sumkindofproblem.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Difficulty - 1.6/abc.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Difficulty - 1.8/quiteaproblem.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/To Be Completed/closingtheloop.py" afterPath="$PROJECT_DIR$/To Be Completed/closingtheloop.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/To Be Completed/heartrate.py" afterPath="$PROJECT_DIR$/To Be Completed/heartrate.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/To Be Completed/oddgnome.py" afterPath="$PROJECT_DIR$/To Be Completed/oddgnome.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,21 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="leftbeehind.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Difficulty - 1.7/leftbeehind.py">
+      <file leaf-file-name="abc.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Difficulty - 1.6/abc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="simonsays.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Difficulty - 1.6/simonsays.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="17">
+              <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -60,8 +40,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Difficulty - 1.3/drmmessages.py" />
-        <option value="$PROJECT_DIR$/Difficulty - 1.3/cetvrta.py" />
         <option value="$PROJECT_DIR$/Difficulty - 1.3/dicecup.py" />
         <option value="$PROJECT_DIR$/Difficulty - 1.3/datum.py" />
         <option value="$PROJECT_DIR$/Difficulty - 1.3/stararrangements.py" />
@@ -111,6 +89,8 @@
         <option value="$PROJECT_DIR$/To Be Completed/yinandyangstones.py" />
         <option value="$PROJECT_DIR$/To Be Completed/leftbeehind.py" />
         <option value="$PROJECT_DIR$/Difficulty - 1.6/simonsays.py" />
+        <option value="$PROJECT_DIR$/Difficulty - 1.8/quiteaproblem.py" />
+        <option value="$PROJECT_DIR$/Difficulty - 1.6/abc.py" />
       </list>
     </option>
   </component>
@@ -169,6 +149,11 @@
             <path>
               <item name="CQ" type="b2602c69:ProjectViewProjectNode" />
               <item name="CQ" type="462c0819:PsiDirectoryNode" />
+              <item name="Difficulty - 1.8" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CQ" type="462c0819:PsiDirectoryNode" />
               <item name="To Be Completed" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -204,7 +189,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.simonsays">
+  <component name="RunManager" selected="Python.quiteaproblem">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -303,23 +288,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="closingtheloop" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/To Be Completed" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CQ" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/To Be Completed/closingtheloop.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
     <configuration name="leftbeehind" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -333,6 +301,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CQ" />
       <option name="SCRIPT_NAME" value="C:\Users\pietschd\PycharmProjects\CQ\Difficulty - 1.7\leftbeehind.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="quiteaproblem" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Difficulty - 1.8" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CQ" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Difficulty - 1.8/quiteaproblem.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -355,19 +340,19 @@
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.closingtheloop" />
-      <item index="1" class="java.lang.String" itemvalue="Python.aaah" />
-      <item index="2" class="java.lang.String" itemvalue="Python.anewalphabet" />
-      <item index="3" class="java.lang.String" itemvalue="Python.leftbeehind" />
-      <item index="4" class="java.lang.String" itemvalue="Python.simonsays" />
+      <item index="0" class="java.lang.String" itemvalue="Python.aaah" />
+      <item index="1" class="java.lang.String" itemvalue="Python.anewalphabet" />
+      <item index="2" class="java.lang.String" itemvalue="Python.leftbeehind" />
+      <item index="3" class="java.lang.String" itemvalue="Python.simonsays" />
+      <item index="4" class="java.lang.String" itemvalue="Python.quiteaproblem" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.simonsays" />
-        <item index="1" class="java.lang.String" itemvalue="Python.leftbeehind" />
-        <item index="2" class="java.lang.String" itemvalue="Python.anewalphabet" />
-        <item index="3" class="java.lang.String" itemvalue="Python.aaah" />
-        <item index="4" class="java.lang.String" itemvalue="Python.closingtheloop" />
+        <item index="0" class="java.lang.String" itemvalue="Python.quiteaproblem" />
+        <item index="1" class="java.lang.String" itemvalue="Python.simonsays" />
+        <item index="2" class="java.lang.String" itemvalue="Python.leftbeehind" />
+        <item index="3" class="java.lang.String" itemvalue="Python.anewalphabet" />
+        <item index="4" class="java.lang.String" itemvalue="Python.aaah" />
       </list>
     </recent_temporary>
   </component>
@@ -459,20 +444,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Difficulty - 1.4/easiest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Difficulty - 1.3/bela.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Difficulty - 1.3/icpcawards.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -794,10 +765,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Difficulty - 1.7/leftbeehind.py">
+    <entry file="file://$PROJECT_DIR$/Difficulty - 1.8/quiteaproblem.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -806,6 +777,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Difficulty - 1.7/leftbeehind.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Difficulty - 1.6/abc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
           <folding />
         </state>
       </provider>
