@@ -1,0 +1,2 @@
+stones = input().strip()
+

@@ -11,19 +11,20 @@ for line in sys.stdin:
     data = [n for n in line.strip().split()]
 
     for string in data:
-        words.append(string)
-
+        if string != '/':
+            words.append(string)
 
 for i in range(len(words)):
     for j in range(len(words)):
-        char = words[i]
-
         if i != j:
-            combine = char + words[j]
+            combine = words[i] + words[j]
             try:
                 combinations.index(combine)
             except ValueError:
                 combinations.append(combine)
+
+
+combinations = sorted(combinations)
 
 for combo in combinations:
     print(combo)

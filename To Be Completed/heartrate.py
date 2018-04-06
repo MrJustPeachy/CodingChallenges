@@ -7,8 +7,10 @@ while test_cases > 0:
     beats = data[0]
     seconds = data[1]
 
-    bpm = (60) / seconds
+    bpm = (60 * beats) / seconds
+    timeBetweenBeats = beats / seconds
+    apbm = 60 / seconds
 
-    print(bpm)
+    print('ABPM: {:.4f}, BPM: {:.4f}, ABPM+:{:.4f}'.format(apbm, bpm, timeBetweenBeats))
 
     test_cases -= 1

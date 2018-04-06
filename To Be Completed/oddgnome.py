@@ -8,28 +8,21 @@ while test_cases > 0:
 
     sortedGnomes = sorted(gnomes)
 
-    for i in range(0, len(gnomes)):
+    print(gnomes)
 
-        regIndex = gnomes.index(sortedGnomes[i])
-
-        if len(gnomes) > 3:
-            if abs(regIndex - i) > 1:
-                kingPos = gnomes.index(sortedGnomes[i]) + 1
+    for i in range(len(gnomes)):
+        print(i)
+        if i == 0:
+            if gnomes[i] > gnomes[i + 1]:
+                kingPos = i
                 break
-            elif regIndex != i:
-                if regIndex != 0 and (regIndex + 1 < len(gnomes)):
-                    if (gnomes[regIndex] > gnomes[regIndex + 1] and gnomes[regIndex] > gnomes[regIndex + 1]
-                        ) or (
-                            gnomes[regIndex] < gnomes[regIndex + 1] and gnomes[regIndex] < gnomes[regIndex - 1]):
-                        kingPos = gnomes.index(sortedGnomes[i]) + 1
-                elif regIndex == 0:
-                    if gnomes[regIndex] > gnomes[regIndex + 1]:
-                        kingPos = gnomes.index(sortedGnomes[i]) + 1
-                elif regIndex + 1 > len(gnomes):
-                    if gnomes[regIndex] < gnomes[regIndex - 1]:
-                        kingPos = gnomes.index(sortedGnomes[i]) + 1
+        elif i < len(gnomes) - 1:
+            if (gnomes[i] > gnomes[i + 1] and gnomes[i - 1]) or (gnomes[i] < gnomes[i - 1]):
+                kingPos = i
         else:
-            kingPos = 1
+            if gnomes[i] < gnomes[i - 1]:
+                kingPos = i
+                break
 
     print(kingPos)
 
