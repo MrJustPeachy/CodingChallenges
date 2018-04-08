@@ -16,7 +16,10 @@ while test_cases > 0:
 
         rows -= 1
 
-    print('Test %d' % tests)
+    if tests == 1:
+        print('Test %d' % tests)
+    else:
+        print('\nTest %d' % tests)
 
     for i in reversed(range(len(matrix))):
         if i == 0:

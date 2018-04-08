@@ -16,7 +16,7 @@ else:
 
         bookedRooms -= 1
 
-    for i in range(1, totalRooms):
+    for i in range(1, totalRooms + 1):
         if i not in roomsTaken:
             print(i)
             break

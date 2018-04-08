@@ -6,7 +6,8 @@ c = data[2]
 
 emptyBottles = e + f
 
-bottlesFromEmptyBottles = emptyBottles // c
+bottlesFromEmptyBottles = emptyBottles
 
 print(bottlesFromEmptyBottles)
 print(bottlesFromEmptyBottles // c)
+print((bottlesFromEmptyBottles // c) // c)
