@@ -5,6 +5,8 @@ test_cases = data[1]
 
 totalInput = test_cases
 
+problemsSolved = 0
+
 while problems > 0:
 
     test_cases = totalInput
@@ -17,11 +19,11 @@ while problems > 0:
 
         test_cases -= 1
 
-    fixedString = []
+    fixedString = [[string[i][1:], string[i][1:].lower()] for i in range(len(string)) if string[i][1:] == string[i][1:].lower()]
 
-    for s in string:
-        modified = s.upper()
-
-        fixedString.append()
+    if len(fixedString) == totalInput:
+        problemsSolved += 1
 
     problems -= 1
+
+print(problemsSolved)
