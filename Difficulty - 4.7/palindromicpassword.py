@@ -8,7 +8,7 @@ while test_cases > 0:
 
     palindromicNum = []
 
-    for i in range(number, 999999):
+    for i in range(number, 1000000):
         if str(i) == str(i)[::-1]:
             palindromicNum.append(i)
             break
@@ -18,7 +18,9 @@ while test_cases > 0:
             palindromicNum.append(i)
             break
 
-    if len(palindromicNum) > 1:
+    if str(number) == str(number)[::-1]:
+        print(number)
+    elif len(palindromicNum) > 1:
         smallestDiff = abs(palindromicNum[1] - number)
         biggestDiff = abs(palindromicNum[0] - number)
 
