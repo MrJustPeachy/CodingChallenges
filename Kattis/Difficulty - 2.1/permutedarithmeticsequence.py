@@ -9,20 +9,24 @@ while test_cases > 0:
 
     sortedSequence = sorted(sequence)
 
-    initialDifference = sortedSequence[1] - sortedSequence[0]
+    initialDifference = abs(sortedSequence[1] - sortedSequence[0])
 
     isSequence = True
 
     for i in range(len(sequence)):
         if i != len(sequence) - 1:
-            if sortedSequence[i + 1] - sortedSequence[i] != initialDifference:
+            if abs(sortedSequence[i + 1] - sortedSequence[i]) != initialDifference:
                 isSequence = False
                 break
 
     if isSequence and sortedSequence == sequence:
         print('arithmetic')
     elif isSequence and sortedSequence != sequence:
-        print('permuted arithmetic')
+        sortedSequence.reverse()
+        if sortedSequence == sequence:
+            print('arithmetic')
+        else:
+            print('permuted arithmetic')
     else:
         print('non-arithmetic')
 

@@ -10,7 +10,7 @@ keysDict = {
     '6': ['m', 'n', 'o'],
     '7': ['p', 'q', 'r', 's'],
     '8': ['t', 'u', 'v'],
-    '9': ['w', 'x', 'y', 'z'],
+    '9': ['w', 'x', 'y', 'z']
 }
 
 while words > 0:
@@ -19,20 +19,20 @@ while words > 0:
 
     words -= 1
 
-keys = set(input().strip())
+keys = input().strip()
 
 possibleWords = 0
 
 for word in wordList:
     charInKeys = ''
-    for char in word:
-        for key in keys:
-            keyList = keysDict[key]
-
+    if len(keys) == len(word):
+        for i in range(len(keys)):
+            keyList = keysDict[keys[i]]
+            char = word[i]
             if char in keyList:
                 charInKeys += char
 
-    if charInKeys == word:
+    if charInKeys == word and len(charInKeys) > 0:
         possibleWords += 1
 
 print(possibleWords)
