@@ -1,0 +1,9 @@
+Denver placings:
+    1st place average - 123
+    2nd place average - 113
+    3rd place average - 100
+
+National placings:
+    1st place average - 375
+    2nd place average - 295
+    3rd place average - 258
