@@ -3,21 +3,39 @@ import math
 # Import file
 filename = 'Prob09.in.txt'
 
+
+def rotate(strg,n):
+    return strg[n:] + strg[:n]
+
+
 with open(filename) as file:
 
     test_cases = int(file.readline().strip())
 
     while test_cases > 0:
 
-        data = file.readline().strip().split()
+        textToEncode = file.readline().strip()
+        keyword = file.readline().strip() * 5
 
-        zoomLevel = int(data[0])
-        latitude = float(data[1])
-        longitude = float(data[2])
+        alphabet = 'abcdefghijklmnopqrstuvwxyz'.upper()
 
-        x = math.floor(abs(((longitude + 180) / 360) * math.pow(2, zoomLevel)))
-        y = math.floor(abs(((1 - ((math.log((math.tan(latitude * (math.pi / 180)) + (1 / (math.cos(latitude * (math.pi / 180))))), math.e)) / math.pi))) * math.pow(2, (zoomLevel - 1))))
+        newString = ''
+        letterPos = 0
 
-        print('http://tile.openstreetmap.org/%d/%d/%d.png' % (zoomLevel, x, y))
+        for i in range(len(textToEncode)):
+
+            encodeChar = textToEncode[i]
+            keywordChar = keyword[letterPos]
+
+            if encodeChar != ' ':
+                startingIndex = alphabet.index(keywordChar)
+                encodeString = rotate(alphabet, alphabet.index(encodeChar))
+                newString += encodeString[startingIndex]
+                letterPos += 1
+
+            else:
+                newString += ' '
+
+        print(newString)
 
         test_cases -= 1

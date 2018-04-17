@@ -1,3 +1,5 @@
+import re
+
 # Import file
 filename = 'Prob11.in.txt'
 
@@ -7,47 +9,23 @@ with open(filename) as file:
 
     while test_cases > 0:
 
-        action = file.readline().strip()
+        line = file.readline().strip().split()
 
-        cipherKey = file.readline().strip()
-        alphabet = 'abcdefghijklmnopqrstuvwxyz'
+        newLine = []
 
-        cipherTestCases = int(file.readline().strip())
+        for word in line:
+            reversedWord = re.sub(r'\b\S*\b', lambda m: m.group(0)[::-1], word)
 
-        while cipherTestCases > 0:
+            newString = ''
 
-            message = file.readline().strip()
-
-            newMessage = ''
-
-            for char in message:
-                if action == 'ENCRYPT':
-                    if char != ' ':
-                        charPos = alphabet.index(char.lower())
-                        cipherChar = cipherKey[charPos]
-
-                        if char.isupper():
-                            newMessage += cipherChar.upper()
-                        else:
-                            newMessage += cipherChar
-                    else:
-                        newMessage += ' '
+            for i in range(len(reversedWord)):
+                if word[i].isupper():
+                    newString += reversedWord[i].upper()
                 else:
-                    if char != ' ':
-                        charPos = cipherKey.index(char.lower())
-                        cipherChar = alphabet[charPos]
+                    newString += reversedWord[i].lower()
 
-                        if char.isupper():
-                            newMessage += cipherChar.upper()
-                        else:
-                            newMessage += cipherChar
-                    else:
-                        newMessage += ' '
+            newLine.append(newString)
 
-            print(newMessage)
-
-            cipherTestCases -= 1
-
-        print()
+        print(' '.join(newLine))
 
         test_cases -= 1

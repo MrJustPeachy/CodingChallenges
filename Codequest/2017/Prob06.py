@@ -1,7 +1,35 @@
-import operator
-
 # Import file
 filename = 'Prob06.in.txt'
+
+wordDict = {
+    'a': 'Alpha',
+    'b': 'Bravo',
+    'c': 'Charlie',
+    'd': 'Delta',
+    'e': 'Echo',
+    'f': 'Foxtrot',
+    'g': 'Golf',
+    'h': 'Hotel',
+    'i': 'India',
+    'j': 'Juliet',
+    'k': 'Kilo',
+    'l': 'Lima',
+    'm': 'Mike',
+    'n': 'November',
+    'o': 'Oscar',
+    'p': 'Papa',
+    'q': 'Quebec',
+    'r': 'Romeo',
+    's': 'Sierra',
+    't': 'Tango',
+    'u': 'Uniform',
+    'v': 'Victor',
+    'w': 'Whiskey',
+    'x': 'Xray',
+    'y': 'Yankee',
+    'z': 'Zulu',
+    ' ': ' '
+}
 
 with open(filename) as file:
 
@@ -9,47 +37,21 @@ with open(filename) as file:
 
     while test_cases > 0:
 
-        schoolName = file.readline().strip()
+        wordNum = int(file.readline().strip())
 
-        students = int(file.readline().strip())
+        words = []
 
-        studentDict = {}
+        while wordNum > 0:
 
-        while students > 0:
+            words.append(file.readline().strip())
 
-            studentInfo = file.readline().strip().split(':')
-            studentName = studentInfo[0]
-            studentsGrades = studentInfo[1].split(',')
+            wordNum -= 1
 
-            totalGradePoints = 0
-            totalCreditHours = 0
-
-            for grade in studentsGrades:
-                letterGrade = 0
-
-                if grade[0] == 'A':
-                    letterGrade = 4
-                elif grade[0] == 'B':
-                    letterGrade = 3
-                elif grade[0] == 'C':
-                    letterGrade = 2
-                elif grade[0] == 'D':
-                    letterGrade = 1
-
-                creditHours = int(grade[1])
-                totalCreditHours += creditHours
-
-                gradePoints = letterGrade * creditHours
-                totalGradePoints += gradePoints
-
-            totalGPA = totalGradePoints / totalCreditHours
-
-            studentDict[studentName] = [totalGPA, totalCreditHours]
-
-            students -= 1
-
-        valedictorian = sorted(studentDict.items(), key=lambda x: x[1], reverse=True)[0]
-
-        print('%s = %s' % (schoolName, valedictorian[0]))
-
+        for word in words:
+            phoneticSentence = []
+            for char in word.lower():
+                phoneticSentence.append(wordDict[char])
+            joinedSentence = '-'.join(phoneticSentence)
+            joinedSentence = joinedSentence.replace('- -', ' ')
+            print(joinedSentence)
         test_cases -= 1

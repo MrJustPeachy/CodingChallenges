@@ -7,15 +7,25 @@ with open(filename) as file:
 
     while test_cases > 0:
 
-        total = float(file.readline().strip()[1:])
+        lastYearList = file.readline().strip().split(',')
+        currentYearList = file.readline().strip().split(',')
 
-        fifteenPercent = round((total * .15), 2)
-        eighteenPercent = round((total * .18), 2)
-        twentyPercent = round((total * .20), 2)
+        lastYearOnly = []
+        currentYearOnly = []
+        bothYears = []
 
-        print('Total of the bill: ${:.2f}'.format(total))
-        print('15% = {:.2f}'.format(fifteenPercent))
-        print('18% = {:.2f}'.format(eighteenPercent))
-        print('20% = {:.2f}'.format(twentyPercent))
+        for name in lastYearList:
+            if name in currentYearList:
+                bothYears.append(name)
+            else:
+                lastYearOnly.append(name)
+
+        for name in currentYearList:
+            if name not in bothYears:
+                currentYearOnly.append(name)
+
+        print(','.join(lastYearOnly))
+        print(','.join(bothYears))
+        print(','.join(currentYearOnly))
 
         test_cases -= 1

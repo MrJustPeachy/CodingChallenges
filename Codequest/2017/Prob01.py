@@ -7,9 +7,8 @@ with open(filename) as file:
 
     while test_cases > 0:
 
-        number = int(file.readline().strip())
-
-        for n in range(number):
-            print('*' * number)
+        string = file.readline().strip()
+        print(string)
+        print(string)
 
         test_cases -= 1

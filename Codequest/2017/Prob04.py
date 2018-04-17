@@ -1,5 +1,15 @@
+import math
+
 # Import file
 filename = 'Prob04.in.txt'
+
+
+def findIndex(n):
+    fibo = 2.078087 * math.log(n) + 1.672276
+
+    # returning rounded off value of index
+    return round(fibo)
+
 
 with open(filename) as file:
 
@@ -7,19 +17,9 @@ with open(filename) as file:
 
     while test_cases > 0:
 
-        words = file.readline().strip().split('|')
-        word1 = words[0]
-        word2 = words[1]
+        index = int(file.readline().strip())
+        fibNum = findIndex(index)
 
-        anagram = True
-
-        for letter in word1:
-            if letter not in word2:
-                anagram = False
-
-        if anagram and word1 != word2:
-            print('%s|%s = ANAGRAM' % (word1, word2))
-        else:
-            print('%s|%s = NOT AN ANAGRAM' % (word1, word2))
+        print('%d = %d' % (index, fibNum))
 
         test_cases -= 1

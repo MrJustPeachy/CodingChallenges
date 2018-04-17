@@ -9,24 +9,13 @@ with open(filename) as file:
 
     while test_cases > 0:
 
-        songsNum = int(file.readline().strip())
+        distanceBetween, speedOfShip = [float(n) for n in file.readline().strip().split()]
 
-        songs = []
+        timeToTravel = (distanceBetween * 1000000) / (speedOfShip * (1 / 3600))
 
-        while songsNum > 0:
 
-            song = file.readline().strip().split(' - ')
 
-            if song[1].startswith('The '):
-                songs.append([song[1][4:].lower(), song[0], song[1]])
-            else:
-                songs.append([song[1].lower(), song[0], song[1]])
+        print(timeToTravel / 3600)
 
-            songsNum -= 1
-
-        sortedList = sorted(songs, key=operator.itemgetter(0, 1))
-
-        for i in range(len(sortedList)):
-            print('%s - %s' % (sortedList[i][1], sortedList[i][2]))
 
         test_cases -= 1
