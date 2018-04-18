@@ -21,9 +21,9 @@ for line in sys.stdin:
             vars = [variableDict[instruction[1]], variableDict[instruction[3]]]
 
             if operation == '<':
-                result = str(operator.gt(vars[1], vars[0])).lower()
+                result = str(operator.lt(vars[0], vars[1])).lower()
                 print(result)
-            elif operator == '>':
+            elif operation == '>':
                 result = str(operator.gt(vars[0], vars[1])).lower()
                 print(result)
             else:

@@ -7,8 +7,7 @@ mostCommon = Counter(string).most_common()
 takenOff = 0
 
 for i in reversed(range(len(mostCommon))):
-    if len(mostCommon) > 2:
-        mostCommon.pop(i)
-        takenOff += 1
+    if i > 1:
+        takenOff += mostCommon[i][1]
 
 print(takenOff)

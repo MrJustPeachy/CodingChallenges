@@ -1,6 +1,5 @@
 from fractions import Fraction
 
-
 # 5/9(F - 32)
 
 fraction = [int(n) for n in input().strip().split('/')]

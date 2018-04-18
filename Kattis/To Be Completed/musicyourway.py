@@ -16,6 +16,8 @@ numberOfSorts = int(input().strip())
 
 sorts = []
 
+print(songsData)
+
 while numberOfSorts > 0:
 
     sorts.append(input().strip())

@@ -24,19 +24,31 @@ for line in sys.stdin:
 
         test_cases -= 1
 
+    am12Times = []
+    pm12Times = []
+
+    for i in reversed(range(len(amTimes))):
+        if amTimes[i][0] == 12:
+            am12Times.append(amTimes[i])
+            amTimes.pop(i)
+
+    for i in reversed(range(len(pmTimes))):
+        if pmTimes[i][0] == 12:
+            pm12Times.append(pmTimes[i])
+            pmTimes.pop(i)
+
     sortedAMTimes = sorted(amTimes, key=operator.itemgetter(0, 1))
+    sortedAM12Times = sorted(am12Times, key=operator.itemgetter(1))
     sortedPMTimes = sorted(pmTimes, key=operator.itemgetter(0, 1))
+    sortedPM12Times = sorted(pm12Times, key=operator.itemgetter(1))
 
-    if len(sortedAMTimes) > 0 and sortedAMTimes[-1][0] == 12:
-        sortedAMTimes.insert(0, sortedAMTimes[-1])
-        sortedAMTimes.pop(-1)
-    if len(sortedPMTimes) > 0 and sortedPMTimes[-1][0] == 12:
-        sortedPMTimes.insert(0, sortedPMTimes[-1])
-        sortedPMTimes.pop(-1)
-
+    for i in range(len(sortedAM12Times)):
+        print('%d:%s a.m.' % (sortedAM12Times[i][0], sortedAM12Times[i][2]))
     for i in range(len(sortedAMTimes)):
         print('%d:%s a.m.' % (sortedAMTimes[i][0], sortedAMTimes[i][2]))
 
+    for i in range(len(sortedPM12Times)):
+        print('%d:%s p.m.' % (sortedPM12Times[i][0], sortedPM12Times[i][2]))
     for i in range(len(sortedPMTimes)):
         print('%d:%s p.m.' % (sortedPMTimes[i][0], sortedPMTimes[i][2]))
 
