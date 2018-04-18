@@ -21,11 +21,11 @@ while questions > 0:
 
     if answer == 'T':
         if boxHolder == 0:
-            if boxHolder + 1 > 8:
+            if initialBoxHolder == 8:
                 boxHolder = 1
             else:
                 boxHolder = initialBoxHolder + 1
-        elif boxHolder + 1 > 8:
+        elif boxHolder == 8:
             boxHolder = 1
         else:
             boxHolder += 1
