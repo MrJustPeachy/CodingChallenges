@@ -1,17 +1,16 @@
+import collections
+
 # Import file
 filename = 'Prob03.in.txt'
 
-with open(filename) as file:
+extensions = []
 
-    test_cases = int(file.readline().strip())
+for line in open(filename):
 
-    while test_cases > 0:
+    extensions.append(line.strip().split('.')[1])
 
-        nums = [int(n) for n in file.readline().strip().split()]
+mostCommon = collections.Counter(extensions).most_common()
 
-        added = nums[0] + nums[1]
-        multiplied = nums[0] * nums[1]
-
-        print('%d %d' % (added, multiplied))
-
-        test_cases -= 1
+for extension in set(extensions):
+    extensionPos = mostCommon.index((extension, extensions.count(extension)))
+    print('%s %d' % (extension, mostCommon[extensionPos][1]))

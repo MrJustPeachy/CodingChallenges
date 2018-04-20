@@ -1,41 +1,36 @@
 import math
+import collections
 
 # Import file
 filename = 'Prob09.in.txt'
 
+setNum = 1
 
-def rotate(strg,n):
-    return strg[n:] + strg[:n]
+for line in open(filename):
 
+    nums = sorted([int(n) for n in line.strip().split(',')])
 
-with open(filename) as file:
+    mean = sum(nums) / len(nums)
+    if len(nums) % 2 == 0:
+        leftMedian = nums[int(len(nums) / 2) - 1]
+        rightMedian = nums[int(len(nums) / 2)]
+        median = (leftMedian + rightMedian) / 2
+    else:
+        median = nums[int(len(nums) / 2)]
 
-    test_cases = int(file.readline().strip())
+    mostCommon = collections.Counter(nums).most_common()
+    highestNum = mostCommon[0][1]
+    mostCommonFiltered = [n for n in mostCommon if n[1] >= highestNum]
 
-    while test_cases > 0:
+    mode = []
 
-        textToEncode = file.readline().strip()
-        keyword = file.readline().strip() * 5
+    for num in mostCommonFiltered:
+        mode.append(str(num[0]))
 
-        alphabet = 'abcdefghijklmnopqrstuvwxyz'.upper()
+    if len(nums) % 2 == 0:
+        print('Set {:d}: Mean={:.1f}, Median={:.1f}, Mode='.format(setNum, mean, median), end='')
+    else:
+        print('Set {:d}: Mean={:.1f}, Median={:d}, Mode='.format(setNum, mean, median), end='')
+    print(','.join(mode))
 
-        newString = ''
-        letterPos = 0
-
-        for i in range(len(textToEncode)):
-
-            encodeChar = textToEncode[i]
-            keywordChar = keyword[letterPos]
-
-            if encodeChar != ' ':
-                startingIndex = alphabet.index(keywordChar)
-                encodeString = rotate(alphabet, alphabet.index(encodeChar))
-                newString += encodeString[startingIndex]
-                letterPos += 1
-
-            else:
-                newString += ' '
-
-        print(newString)
-
-        test_cases -= 1
+    setNum += 1

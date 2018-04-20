@@ -3,19 +3,22 @@ import operator
 # Import file
 filename = 'Prob08.in.txt'
 
-with open(filename) as file:
 
-    test_cases = int(file.readline().strip())
+def computeFactorial(n):
+    number = 1
 
-    while test_cases > 0:
+    for i in range(1, n + 1):
+        number *= i
 
-        distanceBetween, speedOfShip = [float(n) for n in file.readline().strip().split()]
-
-        timeToTravel = (distanceBetween * 1000000) / (speedOfShip * (1 / 3600))
-
+    return number
 
 
-        print(timeToTravel / 3600)
+for line in open(filename):
 
+    enemies, numberOfMissiles = [int(n) for n in line.strip().split()]
 
-        test_cases -= 1
+    enemiesFactorial = computeFactorial(enemies)
+    missilesFactorial = computeFactorial(numberOfMissiles)
+    denom = missilesFactorial * (computeFactorial(enemies - numberOfMissiles))
+
+    print(int(enemiesFactorial / denom))

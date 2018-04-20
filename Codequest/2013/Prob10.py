@@ -1,43 +1,21 @@
 # Import file
-filename = 'Prob01.in.txt'
+filename = 'Prob10.in.txt'
 
-# keyDict = {
-#     'q': '\t',
-#     'w': 'q',
-#     'e': 'w'
-# }
+for line in open(filename):
 
-topRow = 'qwertyuiop'
-newTopRow = '\tqwertyuio'
+    binary = line.strip()
+    binary1 = int(binary[:8], 2)
+    binary2 = int(binary[8:16], 2)
+    binary3 = int(binary[16:24], 2)
+    binary4 = int(binary[24:32], 2)
 
-homeRow = 'asdfghjkl'
-newHomeRow = 'asdfghjk'
-
-bottomRow = 'zxcvbnm,.'
-newBottomRow = 'zxcvbnm,'
-
-with open(filename) as file:
-
-    test_cases = int(file.readline().strip())
-
-    while test_cases > 0:
-
-        lines = int(file.readline().strip())
-
-        while lines > 0:
-
-            line = file.readline().strip()
-
-            capsLockOn = False
-            newLine = ''
-
-            for char in line:
-                if char.lower() == 'a':
-                    capsLockOn = True
-                else:
-                    if char.lower() in topRow:
-                        newIndex = newTopRow[topRow.index(char.lower()) - 1]
-
-            lines -= 1
-
-        test_cases -= 1
+    if 0 <= binary1 <= 127:
+        print('%d.%d.%d.%d [CLASS A]' % (binary1, binary2, binary3, binary4))
+    elif 128 <= binary1 <= 191:
+        print('%d.%d.%d.%d [CLASS B]' % (binary1, binary2, binary3, binary4))
+    elif 192 <= binary1 <= 223:
+        print('%d.%d.%d.%d [CLASS C]' % (binary1, binary2, binary3, binary4))
+    elif 224 <= binary1 <= 239:
+        print('%d.%d.%d.%d [CLASS D]' % (binary1, binary2, binary3, binary4))
+    elif 240 <= binary1 <= 255:
+        print('%d.%d.%d.%d [CLASS E]' % (binary1, binary2, binary3, binary4))

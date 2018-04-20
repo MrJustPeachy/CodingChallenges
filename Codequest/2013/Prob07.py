@@ -1,41 +1,51 @@
 # Import file
 filename = 'Prob07.in.txt'
 
-with open(filename) as file:
+for line in open(filename):
 
-    test_cases = int(file.readline().strip())
+    amountOwed, amountGiven = [float(n) for n in line.strip().split(', ')]
 
-    while test_cases > 0:
+    amountNeeded = amountGiven - amountOwed
 
-        name, stats = file.readline().strip().split(':')
-        statsList = [stat for stat in stats.split(',')]
+    moneyGiven = []
 
-        singles = 0
-        doubles = 0
-        triples = 0
-        homeRuns = 0
-        totalAtBats = 0
+    amountNeeded = round(amountNeeded, 2)
 
-        for stat in statsList:
-            if stat == 'K':
-                totalAtBats += 1
-            elif stat == '1B':
-                singles += 1
-                totalAtBats += 1
-            elif stat == '2B':
-                doubles += 1
-                totalAtBats += 1
-            elif stat == '3B':
-                triples += 1
-                totalAtBats += 1
-            elif stat == 'HR':
-                homeRuns += 1
-                totalAtBats += 1
+    if amountNeeded >= 1:
+        if amountNeeded // 20 >= 1:
+            moneyGiven.append(['TWENTY', int(amountNeeded // 20)])
+            amountNeeded -= int(20 * int(amountNeeded // 20))
 
-        if totalAtBats == 0:
-            print('%s=0.00' % name)
-        else:
-            SLG = round(((singles + (2 * doubles) + (3 * triples) + (4 * homeRuns)) / totalAtBats), 3)
-            print('{:s}={:.3f}'.format(name, SLG))
+        if amountNeeded // 10 >= 1:
+            moneyGiven.append(['TEN', int(amountNeeded // 10)])
+            amountNeeded -= int(10 * int(amountNeeded // 10))
 
-        test_cases -= 1
+        if amountNeeded // 5 >= 1:
+            moneyGiven.append(['FIVE', int(amountNeeded // 5)])
+            amountNeeded -= int(5 * int(amountNeeded // 5))
+
+        if amountNeeded // 1 >= 1:
+            moneyGiven.append(['ONE', int(amountNeeded // 1)])
+            amountNeeded -= int(1 * int(amountNeeded // 1))
+
+    print(amountNeeded)
+
+    if amountNeeded < 1:
+        if amountNeeded // .25 >= 1:
+            moneyGiven.append(['QUARTER', int(amountNeeded // .25)])
+            amountNeeded -= .25 * int(amountNeeded // .25)
+
+        if amountNeeded // .10 >= 1:
+            moneyGiven.append(['DIME', int(amountNeeded // .10)])
+            amountNeeded -= .10 * int(amountNeeded // .10)
+
+        if amountNeeded // .05 >= 1:
+            moneyGiven.append(['NICKEL', int(amountNeeded // .05)])
+            amountNeeded -= .05 * int(amountNeeded // .05)
+
+        print(amountNeeded)
+        if amountNeeded // .01 >= 1:
+            moneyGiven.append(['PENNY', int(amountNeeded // .01)])
+            amountNeeded -= .01 * int(amountNeeded // .01)
+
+    print(moneyGiven)

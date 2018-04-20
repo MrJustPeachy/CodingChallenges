@@ -1,38 +1,26 @@
+from collections import Counter
+
 # Import file
 filename = 'Prob12.in.txt'
 
-with open(filename) as file:
 
-    test_cases = int(file.readline().strip())
+def f7(seq):
+    seen = set()
+    seen_add = seen.add
+    return [x for x in seq if not (x in seen or seen_add(x))]
 
-    while test_cases > 0:
 
-        data = int(file.readline().strip())
+elements = []
 
-        days = data
+for line in open(filename):
 
-        purchases = 0.0
-        dailyBalances = []
+    element = line.strip().split('>')[0]
 
-        while data > 0:
+    if element[:2] != '</' and element not in elements:
+        elements.append(element[1:])
 
-            day, purchase, payments = file.readline().strip().split(',')
+mostCommon = Counter(elements).most_common()
 
-            if len(purchase) == 0:
-                purchase = 0.0
-
-            if len(payments) == 0:
-                payments = 0.0
-
-            purchases += float(purchase)
-            purchases -= float(payments)
-
-            dailyBalances.append(purchases)
-
-            data -= 1
-
-        monthlyInterest = round(((sum(dailyBalances) / days) * (0.18 / 12)), 2)
-
-        print('${:.2f}'.format(monthlyInterest))
-
-        test_cases -= 1
+for element in f7(elements):
+    elementPos = mostCommon.index((element, elements.count(element)))
+    print('%s %d' % (element, mostCommon[elementPos][1]))

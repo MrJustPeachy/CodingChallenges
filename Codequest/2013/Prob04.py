@@ -1,25 +1,8 @@
-import math
 
-# Import file
 filename = 'Prob04.in.txt'
 
+for line in open(filename):
 
-def findIndex(n):
-    fibo = 2.078087 * math.log(n) + 1.672276
+    nums = sorted([int(n) for n in line.strip().split(',')])
 
-    # returning rounded off value of index
-    return round(fibo)
-
-
-with open(filename) as file:
-
-    test_cases = int(file.readline().strip())
-
-    while test_cases > 0:
-
-        index = int(file.readline().strip())
-        fibNum = findIndex(index)
-
-        print('%d = %d' % (index, fibNum))
-
-        test_cases -= 1
+    print(','.join([str(n) for n in nums]))
